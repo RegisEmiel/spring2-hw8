@@ -24,7 +24,6 @@ public class Subscriber {
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), "UTF-8");
             System.out.println("Содержание статьи: " + message);
-
         };
 
         channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {});
